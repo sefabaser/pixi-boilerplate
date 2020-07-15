@@ -1,16 +1,14 @@
 const path = require("path");
 const root = path.resolve("./");
 
-const mainPath = `${root}/src/main.ts`;
-const target = `${root}/target`;
 const isDev = process.env.NODE_ENV === "development";
 
 module.exports = {
   entry: {
-    main: mainPath,
+    main: `${root}/src/main.ts`,
   },
   output: {
-    path: target,
+    path: `${root}/build`,
     filename: "[name].js",
     publicPath: "/",
     devtoolModuleFilenameTemplate: "file:///[absolute-resource-path]",
