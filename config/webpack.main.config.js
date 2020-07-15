@@ -1,11 +1,8 @@
-const webpack = require("webpack");
-const HtmlPlugin = require("html-webpack-plugin");
-
 const { mainPath, target, isDev } = require("./env");
 
 module.exports = {
   entry: {
-    main: `${mainPath}/index.ts`,
+    main: mainPath,
   },
   output: {
     path: target,

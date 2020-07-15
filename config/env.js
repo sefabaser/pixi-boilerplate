@@ -1,14 +1,13 @@
-const path = require('path');
-
-const root = path.resolve('./');
+const path = require("path");
+const root = path.resolve("./");
 const { dependencies } = require(`${root}/package.json`);
+
 const tsconfig = `${root}/tsconfig.json`;
-const srcDir = `${root}/app/src/ts`;
-const mainPath = `${srcDir}/main`;
-const rendererPath = `${srcDir}/renderer`;
+const mainPath = `${root}/src/main.ts`;
+const rendererPath = `${root}/src/app.ts`;
 const target = `${root}/target`;
-const template = `${root}/app/public/index.html`
-const isDev = process.env.NODE_ENV === 'development';
+const template = `${root}/index.html`;
+const isDev = process.env.NODE_ENV === "development";
 
 module.exports = {
   root,
@@ -18,5 +17,5 @@ module.exports = {
   rendererPath,
   template,
   target,
-  isDev
+  isDev,
 };

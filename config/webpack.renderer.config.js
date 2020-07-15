@@ -11,7 +11,7 @@ const {
 
 module.exports = {
   entry: {
-    renderer: `${rendererPath}/index.ts`,
+    renderer: rendererPath,
     vendor: Object.keys(dependencies),
   },
   output: {
