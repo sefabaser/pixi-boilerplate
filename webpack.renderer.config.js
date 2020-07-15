@@ -1,21 +1,19 @@
 const webpack = require("webpack");
 const HtmlPlugin = require("html-webpack-plugin");
+const WebpackShellPlugin = require("webpack-shell-plugin");
+const path = require("path");
+const root = path.resolve("./");
+const { dependencies } = require(`${root}/package.json`);
 
-const {
-  dependencies,
-  rendererPath,
-  template,
-  target,
-  isDev,
-} = require("./env");
+const isDev = process.env.NODE_ENV === "development";
 
 module.exports = {
   entry: {
-    renderer: rendererPath,
+    renderer: `${root}/src/app.ts`,
     vendor: Object.keys(dependencies),
   },
   output: {
-    path: target,
+    path: `${root}/build`,
     filename: "[name].js",
   },
 
@@ -33,12 +31,15 @@ module.exports = {
     new HtmlPlugin({
       title: "Electron",
       filename: "index.html",
-      template,
+      template: `${root}/index.html`,
     }),
     new webpack.DefinePlugin({
       "process.env": {
         NODE_ENV: JSON.stringify(process.env.NODE_ENV),
       },
+    }),
+    new WebpackShellPlugin({
+      onBuildEnd: ["electron ."],
     }),
   ],
   module: {

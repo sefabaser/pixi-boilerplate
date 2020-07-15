@@ -2,7 +2,7 @@
   "name": "pixi-boilerplate",
   "version": "1.0.0",
   "description": "TypeScript, Electron, Pixi, Webpack",
-  "main": "./target/main.js",
+  "main": "./build/main.js",
   "author": {
     "name": "Sefa Baser",
     "email": "sefabaser84@hotmail.com"
@@ -21,21 +21,18 @@
   "build": {
     "appId": "com.example.mygame",
     "files": [
-      "./target/**/*"
+      "./build/**/*"
     ]
   },
   "scripts": {
     "clean-install": "clear && rm -rf node_modules && rm -f package-lock.json && npm install",
-    "clean": "rm -rf dist && rm -rf target",
+    "clean": "rm -rf dist && rm -rf build",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "main-dev": "cross-env NODE_ENV=development webpack --mode development --config ./config/webpack.main.config.js -w",
-    "main-prod": "cross-env NODE_ENV=production webpack --mode production --config ./config/webpack.main.config.js --optimize-minimize",
-    "renderer-dev": "cross-env NODE_ENV=development webpack-dev-server --mode development --config ./config/webpack.renderer.config.js --inline",
-    "renderer-prod": "cross-env NODE_ENV=production webpack --mode production --config ./config/webpack.renderer.config.js --optimize-minimize",
-    "electron-dev": "clear && cross-env NODE_ENV=development electron .",
-    "electron-prod": "clear && cross-env NODE_ENV=production electron .",
-    "prepackage": "npm run clean && npm run main-prod && npm run renderer-prod",
-    "pre-package": "clear",
+    "main-dev": "cross-env NODE_ENV=development webpack --mode development --config ./webpack.main.config.js -w",
+    "main-prod": "cross-env NODE_ENV=production webpack --mode production --config ./webpack.main.config.js --optimize-minimize",
+    "renderer-dev": "cross-env NODE_ENV=development webpack-dev-server --mode development --config ./webpack.renderer.config.js --inline",
+    "renderer-prod": "cross-env NODE_ENV=production webpack --mode production --config ./webpack.renderer.config.js --optimize-minimize",
+    "prepackage": "clear && npm run clean && npm run main-prod && npm run renderer-prod",
     "package": "electron-builder",
     "start": "clear && concurrently --kill-others \"npm run main-dev\" \"npm run renderer-dev\""
   },
@@ -45,16 +42,17 @@
   },
   "devDependencies": {
     "@pixi/unsafe-eval": "^5.3.0",
-    "concurrently": "5.2.0",
-    "cross-env": "7.0.2",
+    "typescript": "3.9.6",
+    "ts-loader": "8.0.1",
+    "source-map-loader": "1.0.1",
     "electron": "9.1.0",
     "electron-builder": "22.7.0",
-    "html-webpack-plugin": "4.3.0",
-    "source-map-loader": "1.0.1",
-    "ts-loader": "8.0.1",
-    "typescript": "3.9.6",
+    "concurrently": "5.2.0",
+    "cross-env": "7.0.2",
     "webpack": "4.43.0",
     "webpack-cli": "3.3.12",
-    "webpack-dev-server": "3.11.0"
+    "webpack-dev-server": "3.11.0",
+    "webpack-shell-plugin": "^0.5.0",
+    "html-webpack-plugin": "4.3.0"
   }
 }

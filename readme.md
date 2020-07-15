@@ -5,14 +5,10 @@ TypeScript + Pixi + Webpack + Electron Boilerplate
  ```bash
 npm i && npm run package
  ```
- Check out './dist' folder.
+Check out './build' folder.
 
 ## Dev mode
-### Run webpack renderer and main dev-server
  ```bash
 npm start
  ```
-### Run electron in another terminal instance
- ```bash
-npm run electron-dev
- ```
+ 
