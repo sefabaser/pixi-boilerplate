@@ -1,11 +1,9 @@
 const webpack = require("webpack");
-const path = require("path");
 const HtmlPlugin = require("html-webpack-plugin");
 
 const {
   dependencies,
   rendererPath,
-  tsconfig,
   template,
   target,
   isDev,
@@ -37,7 +35,6 @@ module.exports = {
       filename: "index.html",
       template,
     }),
-    new webpack.optimize.CommonsChunkPlugin("vendor"),
     new webpack.DefinePlugin({
       "process.env": {
         NODE_ENV: JSON.stringify(process.env.NODE_ENV),
