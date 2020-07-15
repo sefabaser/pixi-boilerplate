@@ -1,4 +1,8 @@
 import * as PIXI from "pixi.js";
+// @ts-ignore
+import { install } from "@pixi/unsafe-eval";
+
+install(PIXI);
 
 document.addEventListener(
   "DOMContentLoaded",

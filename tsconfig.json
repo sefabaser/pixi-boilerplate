@@ -12,5 +12,6 @@
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
     "typeRoots": ["node_modules/@types", "typings"]
-  }
+  },
+  "include": ["src/**/*.ts", ".typings"]
 }
