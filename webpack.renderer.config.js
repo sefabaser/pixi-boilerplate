@@ -1,5 +1,6 @@
 const webpack = require("webpack");
 const HtmlPlugin = require("html-webpack-plugin");
+const WebpackShellPlugin = require("webpack-shell-plugin");
 const path = require("path");
 const root = path.resolve("./");
 const { dependencies } = require(`${root}/package.json`);
@@ -36,6 +37,9 @@ module.exports = {
       "process.env": {
         NODE_ENV: JSON.stringify(process.env.NODE_ENV),
       },
+    }),
+    new WebpackShellPlugin({
+      onBuildEnd: ["electron ."],
     }),
   ],
   module: {

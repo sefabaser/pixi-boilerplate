@@ -32,8 +32,6 @@
     "main-prod": "cross-env NODE_ENV=production webpack --mode production --config ./webpack.main.config.js --optimize-minimize",
     "renderer-dev": "cross-env NODE_ENV=development webpack-dev-server --mode development --config ./webpack.renderer.config.js --inline",
     "renderer-prod": "cross-env NODE_ENV=production webpack --mode production --config ./webpack.renderer.config.js --optimize-minimize",
-    "electron-dev": "clear && cross-env NODE_ENV=development electron .",
-    "electron-prod": "clear && cross-env NODE_ENV=production electron .",
     "prepackage": "clear && npm run clean && npm run main-prod && npm run renderer-prod",
     "package": "electron-builder",
     "start": "clear && concurrently --kill-others \"npm run main-dev\" \"npm run renderer-dev\""
@@ -49,11 +47,12 @@
     "source-map-loader": "1.0.1",
     "electron": "9.1.0",
     "electron-builder": "22.7.0",
-    "html-webpack-plugin": "4.3.0",
     "concurrently": "5.2.0",
     "cross-env": "7.0.2",
     "webpack": "4.43.0",
     "webpack-cli": "3.3.12",
-    "webpack-dev-server": "3.11.0"
+    "webpack-dev-server": "3.11.0",
+    "webpack-shell-plugin": "^0.5.0",
+    "html-webpack-plugin": "4.3.0"
   }
 }
