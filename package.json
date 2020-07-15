@@ -34,8 +34,7 @@
     "renderer-prod": "cross-env NODE_ENV=production webpack --mode production --config ./webpack.renderer.config.js --optimize-minimize",
     "electron-dev": "clear && cross-env NODE_ENV=development electron .",
     "electron-prod": "clear && cross-env NODE_ENV=production electron .",
-    "prepackage": "npm run clean && npm run main-prod && npm run renderer-prod",
-    "pre-package": "clear",
+    "prepackage": "clear && npm run clean && npm run main-prod && npm run renderer-prod",
     "package": "electron-builder",
     "start": "clear && concurrently --kill-others \"npm run main-dev\" \"npm run renderer-dev\""
   },
