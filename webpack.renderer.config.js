@@ -1,13 +1,13 @@
 const webpack = require("webpack");
 const HtmlPlugin = require("html-webpack-plugin");
+const path = require("path");
+const root = path.resolve("./");
+const { dependencies } = require(`${root}/package.json`);
 
-const {
-  dependencies,
-  rendererPath,
-  template,
-  target,
-  isDev,
-} = require("./env");
+const rendererPath = `${root}/src/app.ts`;
+const target = `${root}/target`;
+const template = `${root}/index.html`;
+const isDev = process.env.NODE_ENV === "development";
 
 module.exports = {
   entry: {

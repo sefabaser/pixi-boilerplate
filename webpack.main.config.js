@@ -1,4 +1,9 @@
-const { mainPath, target, isDev } = require("./env");
+const path = require("path");
+const root = path.resolve("./");
+
+const mainPath = `${root}/src/main.ts`;
+const target = `${root}/target`;
+const isDev = process.env.NODE_ENV === "development";
 
 module.exports = {
   entry: {
