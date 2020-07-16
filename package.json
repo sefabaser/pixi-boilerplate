@@ -58,6 +58,7 @@
     "electron-builder": "22.7.0",
     "html-webpack-plugin": "4.3.0",
     "jest": "^26.1.0",
+    "jest-canvas-mock": "^2.2.0",
     "source-map-loader": "1.0.1",
     "ts-jest": "^26.1.2",
     "ts-loader": "8.0.1",
