@@ -39,7 +39,7 @@ module.exports = {
       }
     }),
     new WebpackShellPlugin({
-      onBuildEnd: ['electron --remote-debugging-port=9222 .']
+      onBuildEnd: ['electron --inspect=5858 --remote-debugging-port=9222 .']
     })
   ],
   module: {
