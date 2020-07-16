@@ -50,17 +50,18 @@
   },
   "devDependencies": {
     "@pixi/unsafe-eval": "5.3.0",
-    "typescript": "3.9.6",
-    "ts-loader": "8.0.1",
-    "source-map-loader": "1.0.1",
-    "electron": "9.1.0",
-    "electron-builder": "22.7.0",
     "concurrently": "5.2.0",
     "cross-env": "7.0.2",
+    "electron": "9.1.0",
+    "electron-builder": "22.7.0",
+    "html-webpack-plugin": "4.3.0",
+    "source-map-loader": "1.0.1",
+    "ts-loader": "8.0.1",
+    "tslint": "^6.1.2",
+    "typescript": "3.9.6",
     "webpack": "4.43.0",
     "webpack-cli": "3.3.12",
     "webpack-dev-server": "3.11.0",
-    "webpack-shell-plugin": "0.5.0",
-    "html-webpack-plugin": "4.3.0"
+    "webpack-shell-plugin": "0.5.0"
   }
 }

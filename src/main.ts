@@ -1,17 +1,15 @@
-import { app, BrowserWindow } from "electron";
+import { app, BrowserWindow } from 'electron';
 
-const isDev = process.env.NODE_ENV === "development";
+const isDev = process.env.NODE_ENV === 'development';
 
-app.on("ready", () => {
+app.on('ready', () => {
   const win = new BrowserWindow({
     width: 1220,
     height: 922,
-    webPreferences: { nodeIntegration: true },
+    webPreferences: { nodeIntegration: true }
   });
 
-  const url = isDev
-    ? "http://localhost:3000"
-    : `file://${__dirname}/index.html`;
+  const url = isDev ? 'http://localhost:3000' : `file://${__dirname}/index.html`;
 
   win.loadURL(url);
   isDev && win.webContents.openDevTools();
