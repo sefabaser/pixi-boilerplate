@@ -7,11 +7,11 @@ app.on('ready', () => {
     width: 1238,
     height: 1000,
     webPreferences: { nodeIntegration: true }
-    // backgroundColor: '#000000'
   };
 
   if (!isDev) {
     options.resizable = false;
+    options.backgroundColor = '#000000';
   }
 
   let win = new BrowserWindow(options);
