@@ -4,6 +4,8 @@ const isDev = process.env.NODE_ENV === "development";
 
 app.on("ready", () => {
   const win = new BrowserWindow({
+    width: 1220,
+    height: 922,
     webPreferences: { nodeIntegration: true },
   });
 
