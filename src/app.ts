@@ -19,7 +19,6 @@ document.addEventListener(
 
     app.loader.add('crack', 'src/assets/cracked.jpg');
     app.loader.load((loader, resources) => {
-      console.log(resources);
       if (resources.crack) {
         let sprite = new PIXI.Sprite(resources.crack.texture);
         app.stage.addChild(sprite);
