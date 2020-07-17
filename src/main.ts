@@ -4,8 +4,8 @@ const isDev = process.env.NODE_ENV === 'development';
 
 app.on('ready', () => {
   let options: Electron.BrowserWindowConstructorOptions = {
-    width: 1238,
-    height: 1000,
+    width: 1200,
+    height: 800,
     webPreferences: { nodeIntegration: true }
   };
 
