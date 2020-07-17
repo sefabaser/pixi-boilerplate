@@ -9,7 +9,7 @@ module.exports = {
   setupFiles: ['jest-canvas-mock'],
   testEnvironment: 'jest-environment-jsdom',
   testMatch: ['**/__tests__/**/*.[jt]s?(x)', '**/?(*.)+(spec|test).[tj]s?(x)'],
-  testPathIgnorePatterns: ['node_modules/', 'dist', 'build', '.typings'],
+  testPathIgnorePatterns: ['node_modules/', 'build', 'dist', '.typings'],
   transform: {
     '^.+\\.tsx?$': 'ts-jest'
   }
