@@ -38,7 +38,7 @@
   "scripts": {
     "clean-install": "clear && rm -rf node_modules && rm -f package-lock.json && npm install",
     "clean": "rm -rf build && rm -rf dist",
-    "test": "jest",
+    "test": "jest --watch",
     "test-coverage": "jest --collect-coverage",
     "main-dev": "cross-env NODE_ENV=development webpack --mode development --config ./webpack.main.config.js -w",
     "main-prod": "cross-env NODE_ENV=production webpack --mode production --config ./webpack.main.config.js --optimize-minimize",
