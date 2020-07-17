@@ -41,8 +41,8 @@
     "main-prod": "cross-env NODE_ENV=production webpack --mode production --config ./webpack.main.config.js --optimize-minimize",
     "renderer-dev": "cross-env NODE_ENV=development webpack-dev-server --mode development --config ./webpack.renderer.config.js --inline",
     "renderer-prod": "cross-env NODE_ENV=production webpack --mode production --config ./webpack.renderer.config.js --optimize-minimize",
-    "prepackage": "clear && npm run clean && npm run main-prod && npm run renderer-prod && xcopy /F .\\src\\assets .\\build\\src\\assets\\",
-    "package": "electron-builder",
+    "prebuild": "clear && npm run clean && npm run main-prod && npm run renderer-prod && xcopy /F .\\src\\assets .\\build\\src\\assets\\",
+    "build": "electron-builder",
     "start": "clear && concurrently --kill-others \"npm run main-dev\" \"npm run renderer-dev\""
   },
   "license": "MIT",
