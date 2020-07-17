@@ -8,7 +8,7 @@ module.exports = {
     main: `${root}/src/main.ts`
   },
   output: {
-    path: `${root}/build`,
+    path: `${root}/dist`,
     filename: '[name].js',
     publicPath: '/',
     devtoolModuleFilenameTemplate: 'file:///[absolute-resource-path]'

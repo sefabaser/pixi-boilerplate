@@ -13,7 +13,7 @@ module.exports = {
     vendor: Object.keys(dependencies)
   },
   output: {
-    path: `${root}/build`,
+    path: `${root}/dist`,
     filename: '[name].js'
   },
 
