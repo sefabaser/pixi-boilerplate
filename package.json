@@ -44,7 +44,8 @@
     "main-prod": "cross-env NODE_ENV=production webpack --mode production --config ./webpack.main.config.js --optimize-minimize",
     "renderer-dev": "cross-env NODE_ENV=development webpack-dev-server --mode development --config ./webpack.renderer.config.js --inline",
     "renderer-prod": "cross-env NODE_ENV=production webpack --mode production --config ./webpack.renderer.config.js --optimize-minimize",
-    "prebuild": "clear && npm run clean && npm run main-prod && npm run renderer-prod && xcopy /F .\\src\\assets .\\dist\\src\\assets\\",
+    "copy-assets": "xcopy /f /s /e /EXCLUDE:asset-copy-exclude.txt .\\src\\assets .\\dist\\src\\assets\\",
+    "prebuild": "clear && npm run clean && npm run main-prod && npm run renderer-prod && npm run copy-assets",
     "build": "electron-builder",
     "start": "clear && concurrently --kill-others \"npm run main-dev\" \"npm run renderer-dev\""
   },
@@ -70,6 +71,7 @@
     "webpack": "4.43.0",
     "webpack-cli": "3.3.12",
     "webpack-dev-server": "3.11.0",
+    "webpack-entry-plus": "1.0.18",
     "webpack-shell-plugin": "0.5.0"
   }
 }
