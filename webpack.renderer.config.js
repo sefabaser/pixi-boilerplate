@@ -4,7 +4,6 @@ const WebpackShellPlugin = require('webpack-shell-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const EntryPlus = require('webpack-entry-plus');
 const path = require('path');
-const glob = require('glob');
 
 const root = path.resolve('./');
 const { dependencies } = require(`${root}/package.json`);
@@ -60,7 +59,17 @@ module.exports = {
           }
         }
       })
-    ]
+    ],
+    runtimeChunk: 'single',
+    splitChunks: {
+      cacheGroups: {
+        vendor: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendor',
+          chunks: 'all'
+        }
+      }
+    }
   },
   module: {
     rules: [
