@@ -13,7 +13,7 @@
       "request": "attach",
       "name": "Attach to Main Process",
       "address": "localhost",
-      "port": 5858,
+      "port": 5859,
       "localRoot": "${workspaceRoot}",
       "remoteRoot": "${workspaceRoot}"
     }

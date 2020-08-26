@@ -36,7 +36,7 @@
     }
   },
   "scripts": {
-    "clean-install": "clear && rm -rf node_modules && rm -f package-lock.json && npm install",
+    "clean-install": "cls && rm -rf node_modules && rm -f package-lock.json && npm install",
     "clean": "rm -rf build && rm -rf dist",
     "test": "jest --watch",
     "test-coverage": "jest --collect-coverage",
@@ -45,9 +45,9 @@
     "renderer-dev": "cross-env NODE_ENV=development webpack-dev-server --mode development --config ./webpack.renderer.config.js --inline",
     "renderer-prod": "cross-env NODE_ENV=production webpack --mode production --config ./webpack.renderer.config.js --optimize-minimize",
     "copy-assets": "xcopy /f /s /e /EXCLUDE:asset-copy-exclude.txt .\\src\\assets .\\dist\\src\\assets\\",
-    "prebuild": "clear && npm run clean && npm run main-prod && npm run renderer-prod && npm run copy-assets",
+    "prebuild": "cls && npm run clean && npm run main-prod && npm run renderer-prod && npm run copy-assets",
     "build": "electron-builder",
-    "start": "clear && concurrently --kill-others \"npm run main-dev\" \"npm run renderer-dev\""
+    "start": "cls && concurrently --kill-others \"npm run main-dev\" \"npm run renderer-dev\""
   },
   "license": "MIT",
   "dependencies": {

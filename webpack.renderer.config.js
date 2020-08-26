@@ -25,7 +25,7 @@ module.exports = {
     filename: '[name].js'
   },
   devServer: {
-    port: 3000
+    port: 3001
   },
   devtool: isDev && 'inline-source-map',
   resolve: {
@@ -44,7 +44,7 @@ module.exports = {
       }
     }),
     new WebpackShellPlugin({
-      onBuildEnd: [isDev ? 'electron --inspect=5858 --remote-debugging-port=9222 .' : 'echo "Packaging in progress!"']
+      onBuildEnd: [isDev ? 'electron --inspect=5859 --remote-debugging-port=9222 .' : 'echo "Packaging in progress!"']
     })
   ],
   optimization: {

@@ -22,5 +22,5 @@ app.on('ready', () => {
     win.webContents.openDevTools();
   }
 
-  win.loadURL(isDev ? 'http://localhost:3000' : `file://${__dirname}/index.html`);
+  win.loadURL(isDev ? 'http://localhost:3001' : `file://${__dirname}/index.html`);
 });
