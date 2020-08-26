@@ -1,6 +1,6 @@
 import { app, BrowserWindow } from 'electron';
 
-const isDev = process.env.NODE_ENV === 'development';
+const IsDev = process.env.NODE_ENV === 'development';
 
 app.on('ready', () => {
   let options: Electron.BrowserWindowConstructorOptions = {
@@ -9,18 +9,18 @@ app.on('ready', () => {
     webPreferences: { nodeIntegration: true }
   };
 
-  if (!isDev) {
+  if (!IsDev) {
     options.resizable = false;
     options.backgroundColor = '#000000';
   }
 
   let win = new BrowserWindow(options);
-  if (!isDev) {
-    // tslint:disable-next-line: no-null-keyword
+  if (!IsDev) {
+    // eslint-disable-next-line no-null/no-null
     win.setMenu(null);
   } else {
     win.webContents.openDevTools();
   }
 
-  win.loadURL(isDev ? 'http://localhost:3001' : `file://${__dirname}/index.html`);
+  win.loadURL(IsDev ? 'http://localhost:3001' : `file://${__dirname}/index.html`);
 });

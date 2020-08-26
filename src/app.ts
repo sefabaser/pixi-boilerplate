@@ -3,7 +3,7 @@ import * as PIXI from 'pixi.js';
 import { install } from '@pixi/unsafe-eval';
 install(PIXI);
 
-const isDev = process.env.NODE_ENV === 'development';
+const IsDev = process.env.NODE_ENV === 'development';
 
 document.addEventListener(
   'DOMContentLoaded',
