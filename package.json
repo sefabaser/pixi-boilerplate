@@ -52,6 +52,7 @@
   },
   "license": "MIT",
   "dependencies": {
+    "pixi-framework": "0.0.0",
     "pixi.js": "5.3.0"
   },
   "devDependencies": {

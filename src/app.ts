@@ -1,29 +1,17 @@
 import * as PIXI from 'pixi.js';
-// @ts-ignore
-import { install } from '@pixi/unsafe-eval';
-install(PIXI);
 
-const IsDev = process.env.NODE_ENV === 'development';
+import { Game, GameAssets } from 'pixi-framework';
 
-document.addEventListener(
-  'DOMContentLoaded',
-  () => {
-    // Create a Pixi Application
-    let app = new PIXI.Application({
-      width: 1200,
-      height: 800,
-      antialias: true,
-      resolution: 1
-    });
-    document.body.appendChild(app.view);
-
-    app.loader.add('crack', 'src/assets/cracked.jpg');
-    app.loader.load((loader, resources) => {
-      if (resources.crack) {
-        let sprite = new PIXI.Sprite(resources.crack.texture);
-        app.stage.addChild(sprite);
-      }
-    });
-  },
-  false
-);
+let game = new Game();
+game
+  .setup([
+    {
+      name: 'crack',
+      source: './src/assets/cracked.jpg'
+    }
+  ])
+  .then(() => {
+    let asset = GameAssets.getAsset('crack');
+    let sprite = new PIXI.Sprite(asset.texture);
+    game.app.stage.addChild(sprite);
+  });
